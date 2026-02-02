@@ -1,7 +1,5 @@
 import { theme } from "@styles/theme";
 
-const useTheme = () => {
-  return theme;
-};
+const useTheme = () => theme;
 
 export { useTheme };

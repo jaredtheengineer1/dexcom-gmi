@@ -92,6 +92,7 @@ export const primitiveTokens = {
     size96: 96,
   },
   lineHeight: {
+    height16: 16,
     height18: 18,
     height21: 21,
     height24: 24,
@@ -106,10 +107,9 @@ export const primitiveTokens = {
     spacingWidest: 1.25,
   },
   borderRadius: {
-    radiusSm: 0.125,
-    radiusMd: 0.5,
-    radiusLg: 0.75,
-    radiusFull: 9999,
+    radiusSm: 6,
+    radiusMd:12,
+    radiusLg: 18,
   },
 };
 
