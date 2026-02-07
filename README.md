@@ -54,3 +54,12 @@ Join our community of developers creating universal apps.
 
 - [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
 - [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+
+## Disclaimer
+
+This project is not affiliated with Dexcom, Inc.  
+See [DISCLAIMER.md](./DISCLAIMER.md) and [PRIVACY.md](./PRIVACY.md) for details.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.

@@ -69,6 +69,10 @@ const LegalScreen = () => {
       <Text style={textStyles.paragraph}>
         This app does not sell, share, or monetize your data.
       </Text>
+
+      <Text style={textStyles.paragraph}>
+        Glucose A1C Buddy is an independent application and is not affiliated with or endorsed by Dexcom, Inc.
+      </Text>
     </ScrollView>
   );
 };

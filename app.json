@@ -1,7 +1,7 @@
 {
   "expo": {
     "scheme": "dexcomgmi",
-    "name": "dexcom-gmi",
+    "name": "Glucose A1C Buddy",
     "slug": "dexcom-gmi",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -20,7 +20,7 @@
       },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
-      "package": "com.anonymous.dexcomgmi"
+      "package": "com.jaredtheengineer1.dexcomgmi"
     },
     "plugins": [
       "expo-router",

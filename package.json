@@ -8,7 +8,8 @@
     "android": "expo run:android",
     "ios": "expo run:ios",
     "web": "expo start --web",
-    "lint": "expo lint"
+    "lint": "expo lint",
+    "dev-apk": "npx expo prebuild --clean && npx expo build:android -t apk"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.3",

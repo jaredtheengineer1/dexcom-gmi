@@ -23,7 +23,7 @@ export default function HomeScreen() {
   const [connected, setConnected] = useState<boolean>(false)
   const [summary, setSummary] = useState<{estimatedA1c: number | null, coveragePercent: number, days:number} | null>(null);
   const [loadingSummary,setLoadingSummary]=useState(false)
-  const [debug, setDebug] = useState<any>(null)
+  const [debug, setDebug] = useState<string[]>([])
   const loadSummary = async () => {
     try {
       setLoadingSummary(true)
@@ -48,12 +48,13 @@ export default function HomeScreen() {
   useEffect(() => {
     getToken().then(token => { if(token){setConnected(true); loadSummary();}})
   },[])
+
   const gmi = summary?.estimatedA1c
   const days = summary?.days
   const coverage = summary?.coveragePercent
 
   const log = (msg: string) => {
-    setDebug(d => [...d, msg])
+    setDebug((d: string[]) => [...d, msg])
   }
 
   useEffect(() => {
@@ -83,12 +84,17 @@ export default function HomeScreen() {
   }
 
   const handleIncomingUrl = async (url: string) => {
-    const parsed = Linking.parse(url);
-    log(`handleIncomingUrl: ${parsed} end handleIncomingUrl`)
-    if (parsed.path === 'auth-complete' && parsed.queryParams?.session) {
-      await saveToken(parsed.queryParams.session as string)
-      setConnected(true)
-      loadSummary()
+    try {
+
+      const parsed = Linking.parse(url);
+      log(`handleIncomingUrl: ${parsed} end handleIncomingUrl`)
+      if (parsed.path === 'auth-complete' && parsed.queryParams?.session) {
+        await saveToken(parsed.queryParams.session as string)
+        setConnected(true)
+        loadSummary()
+      }
+    } catch (err) {
+      console.error('Deep link handling failed', err)
     }
   } 
   return (
